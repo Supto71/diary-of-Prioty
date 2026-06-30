@@ -7,10 +7,15 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["money", "diary", "tracker"],
+  "keywords": [
+    "money",
+    "diary",
+    "tracker"
+  ],
   "author": "Prioty",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^4.21.0"
   }
 }
