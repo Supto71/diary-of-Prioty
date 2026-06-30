@@ -1,0 +1,16 @@
+{
+  "name": "diary-of-prioty",
+  "version": "1.0.0",
+  "description": "A cute personal money diary for Sayeda Halida Eadib Prioty",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["money", "diary", "tracker"],
+  "author": "Prioty",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

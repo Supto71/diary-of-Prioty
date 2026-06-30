@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Money — Personal Income & Expense Tracker</title>
+  <meta name="description" content="Track your monthly income and expenses with a simple personal money log.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Floating hearts background -->
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+  <div class="tracker-container">
+    <!-- Header -->
+    <div class="tracker-header">
+      <a href="index.html" class="back-link" id="back-home">← Home</a>
+      <h1 class="tracker-title"><span class="pink">Prioty's</span> Money Diary 💗</h1>
+      <p class="tracker-subtitle">Personal income & expense tracker</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card income">
+        <div class="summary-label">Income</div>
+        <div class="summary-amount" id="totalIncome">৳0</div>
+      </div>
+      <div class="summary-card expense">
+        <div class="summary-label">Expenses</div>
+        <div class="summary-amount" id="totalExpense">৳0</div>
+      </div>
+      <div class="summary-card balance">
+        <div class="summary-label">Balance</div>
+        <div class="summary-amount" id="totalBalance">৳0</div>
+      </div>
+    </div>
+
+    <!-- Add Entry Form -->
+    <div class="add-entry-card">
+      <h2>✨ Add new entry</h2>
+      <form id="entryForm" class="form-grid">
+        <div class="form-group full-width">
+          <label>Type</label>
+          <div class="type-toggle">
+            <button type="button" class="type-btn income-btn active" id="incomeToggle" data-type="income">
+              📈 Income
+            </button>
+            <button type="button" class="type-btn expense-btn" id="expenseToggle" data-type="expense">
+              📉 Expense
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="entryDescription">Description</label>
+          <input type="text" id="entryDescription" placeholder="e.g., Freelance work" required>
+        </div>
+        <div class="form-group">
+          <label for="entryAmount">Amount (৳)</label>
+          <input type="number" id="entryAmount" placeholder="0.00" min="0.01" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="entryDate">Date</label>
+          <input type="date" id="entryDate" required>
+        </div>
+        <div class="form-group">
+          <label for="entryCategory">Category</label>
+          <select id="entryCategory">
+            <option value="general">General</option>
+            <option value="salary">Salary</option>
+            <option value="freelance">Freelance</option>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="shopping">Shopping</option>
+            <option value="bills">Bills</option>
+            <option value="education">Education</option>
+            <option value="health">Health</option>
+            <option value="gift">Gift</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn" id="addEntryBtn">
+          Add Entry 💕
+        </button>
+      </form>
+    </div>
+
+    <!-- Month Navigation -->
+    <div class="month-nav">
+      <button class="month-nav-btn" id="prevMonth">‹</button>
+      <span class="month-label" id="currentMonth">June 2026</span>
+      <button class="month-nav-btn" id="nextMonth">›</button>
+    </div>
+
+    <!-- Entries List -->
+    <div class="entries-list" id="entriesList">
+      <!-- Entries will be rendered here -->
+    </div>
+
+    <!-- Privacy Note -->
+    <div class="privacy-note">
+      🔒 Your data is stored privately in this browser.
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="hearts.js"></script>
+  <script src="tracker.js"></script>
+</body>
+</html>
